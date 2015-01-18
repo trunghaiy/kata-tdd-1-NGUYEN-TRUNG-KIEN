@@ -15,5 +15,5 @@ var Calculator = (function () {
 
   return {
     add: add
-  }
+  };
 })();
