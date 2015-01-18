@@ -2,9 +2,10 @@ var Calculator = (function () {
   var add = function (numbers) {
     var total = 0,
       delimiter = ',',
-      delimiterArray = [],
       pattern = '',
-      numbersArray = [];
+      delimiterArray = [],
+      numbersArray = [],
+      negativeArray = [];
 
     if (numbers) {
       if(delimiterArray = numbers.match(/\/\/(.)*\n/)) {
@@ -19,7 +20,14 @@ var Calculator = (function () {
       pattern = new RegExp(pattern);
       numbersArray = numbers.split(pattern);
       for (var i = 0; i < numbersArray.length; i++) {
+        if (parseInt(numbersArray[i]) < 0) {
+          negativeArray.push(numbersArray[i]);
+        }
         total += parseInt(numbersArray[i]);
+      }
+
+      if (negativeArray.length > 0) {
+        throw 'Negatives not allowed: ' + negativeArray.join(',');
       }
     }
     return total;
