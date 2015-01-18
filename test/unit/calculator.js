@@ -22,4 +22,16 @@ describe('Calculator object', function () {
   it('should support different limiter', function () {
     expect(Calculator.add('//;\n1;2')).toEqual(1 + 2);
   });
+
+  it('should throw an exception for one negative', function () {
+    expect(function () {
+      Calculator.add('-1, 1, 2');
+    }).toThrow('Negatives not allowed: -1');
+  });
+
+  it('should throw an exception for negatives', function () {
+    expect(function () {
+      Calculator.add('-1, -2, 1, 2');
+    }).toThrow('Negatives not allowed: -1, -2');
+  });
 });
