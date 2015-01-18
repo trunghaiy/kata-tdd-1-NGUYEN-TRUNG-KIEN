@@ -5,5 +5,5 @@ There are two folders is `src` and `test`, `src` contains source code and `test`
 ```sh
 cd kata-tdd-1-NGUYEN-TRUNG-KIEN
 npm install
-grunt test
+grunt karma:continuous
 ```
