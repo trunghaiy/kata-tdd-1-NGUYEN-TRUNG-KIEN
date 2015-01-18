@@ -1,6 +1,4 @@
 describe('Calculator object', function () {
-  var number = "1,2,3";
-
   it('should return zero when numbers is empty', function () {
     expect(Calculator.add('')).toEqual(0);
   });
@@ -10,6 +8,10 @@ describe('Calculator object', function () {
   });
 
   it('should return the total of numbers when receive two numbers', function() {
-    expect(Calculator.add('1,2')).toEqual(3);
+    expect(Calculator.add('1,2')).toEqual(1 + 2);
+  });
+
+  it('should return the total of unknow amount of numbers', function() {
+    expect(Calculator.add('1,2,3,4,5')).toEqual(1 + 2 + 3 + 4 + 5);
   });
 });
