@@ -7,11 +7,15 @@ describe('Calculator object', function () {
     expect(Calculator.add('1')).toEqual(1);
   });
 
-  it('should return the total of numbers when receive two numbers', function() {
+  it('should return the total of numbers when receive two numbers', function () {
     expect(Calculator.add('1,2')).toEqual(1 + 2);
   });
 
-  it('should return the total of unknow amount of numbers', function() {
+  it('should return the total of unknow amount of numbers', function () {
     expect(Calculator.add('1,2,3,4,5')).toEqual(1 + 2 + 3 + 4 + 5);
+  });
+
+  it('should handle new lines between numbers', function () {
+    expect(Calculator.add('1\n2,3')).toEqual(1 + 2 + 3);
   });
 });
