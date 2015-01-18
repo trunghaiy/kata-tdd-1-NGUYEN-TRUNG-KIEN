@@ -18,4 +18,8 @@ describe('Calculator object', function () {
   it('should handle new lines between numbers', function () {
     expect(Calculator.add('1\n2,3')).toEqual(1 + 2 + 3);
   });
+
+  it('should support different limiter', function () {
+    expect(Calculator.add('//;\n1;2')).toEqual(1 + 2);
+  });
 });
