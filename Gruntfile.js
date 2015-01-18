@@ -25,9 +25,6 @@ module.exports = function(grunt) {
       options: {
         configFile: 'test/config/karma.config.js'
       },
-      unit: {
-        background: true
-      },
       continuous: {
         singleRun: true
       }
@@ -35,7 +32,7 @@ module.exports = function(grunt) {
     watch: {
       karma: {
         files: ['src/*.js', 'test/unit/*.js', 'Gruntfile.js'],
-        tasks: ['jshint', 'karma:continuous', 'karma:unit']
+        tasks: ['jshint', 'karma:continuous']
       }
     }
   });
