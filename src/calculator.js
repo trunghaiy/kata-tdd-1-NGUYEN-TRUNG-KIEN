@@ -8,16 +8,16 @@ var Calculator = (function () {
       negativeArray = [];
 
     if (numbers) {
-      if(delimiterArray = numbers.match(/\/\/(.)*\n/)) {
+      if (delimiterArray = numbers.match(/\/\/\[([^\n]+)\]\n/)) {
         delimiter = delimiterArray[1];
         numbers = numbers.split('\n')[1];
-        pattern = '[' + delimiter + ']';
+        pattern = delimiter;
       }
       else {
-        pattern = '[\n,]';
+        numbers = numbers.replace('\n', ',');
+        pattern = ',';
       }
 
-      pattern = new RegExp(pattern);
       numbersArray = numbers.split(pattern);
       for (var i = 0; i < numbersArray.length; i++) {
         if (parseInt(numbersArray[i]) < 0) {
