@@ -38,4 +38,8 @@ describe('Calculator object', function () {
   it('should ignore numbers bigger than 1000', function () {
     expect(Calculator.add('2, 1001')).toEqual(2);
   });
+
+  it('should allow multi delimiters', function () {
+    expect(Calculator.add('//[***]\n1***2***3')).toEqual(6);
+  });
 });
