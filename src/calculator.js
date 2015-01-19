@@ -23,6 +23,9 @@ var Calculator = (function () {
         if (parseInt(numbersArray[i]) < 0) {
           negativeArray.push(numbersArray[i]);
         }
+        if (numbersArray[i] > 1000) {
+          continue;
+        }
         total += parseInt(numbersArray[i]);
       }
 
