@@ -34,4 +34,8 @@ describe('Calculator object', function () {
       Calculator.add('-1, -2, 1, 2');
     }).toThrow('Negatives not allowed: -1, -2');
   });
+
+  it('should ignore numbers bigger than 1000', function () {
+    expect(Calculator.add('2, 1001')).toEqual(2);
+  });
 });
