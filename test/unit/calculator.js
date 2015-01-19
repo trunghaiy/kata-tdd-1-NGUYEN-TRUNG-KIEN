@@ -20,7 +20,7 @@ describe('Calculator object', function () {
   });
 
   it('should support different limiter', function () {
-    expect(Calculator.add('//;\n1;2')).toEqual(1 + 2);
+    expect(Calculator.add('//[;]\n1;2')).toEqual(1 + 2);
   });
 
   it('should throw an exception for one negative', function () {
