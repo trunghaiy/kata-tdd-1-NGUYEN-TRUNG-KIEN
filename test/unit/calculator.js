@@ -20,7 +20,7 @@ describe('Calculator object', function () {
   });
 
   it('should support different limiter', function () {
-    expect(Calculator.add('//[;]\n1;2')).toEqual(1 + 2);
+    expect(Calculator.add('//;\n1;2')).toEqual(1 + 2);
   });
 
   it('should throw an exception for one negative', function () {
@@ -39,7 +39,7 @@ describe('Calculator object', function () {
     expect(Calculator.add('2, 1001')).toEqual(2);
   });
 
-  it('should allow multi delimiters', function () {
+  it('should allow delimiters can be of any length', function () {
     expect(Calculator.add('//[***]\n1***2***3')).toEqual(6);
   });
 });
