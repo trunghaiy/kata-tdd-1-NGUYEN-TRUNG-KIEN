@@ -2,23 +2,19 @@ var Calculator = (function () {
   var add = function (numbers) {
     var total = 0,
       delimiter = ',',
-      pattern = '',
-      delimiterArray = [],
       numbersArray = [],
       negativeArray = [];
 
     if (numbers) {
-      if (delimiterArray = numbers.match(/\/\/\[([^\n]+)\]\n/)) {
-        delimiter = delimiterArray[1];
+      if (numbers.indexOf('//') === 0) {
+        delimiter = numbers.substr(2, 1);
         numbers = numbers.split('\n')[1];
-        pattern = delimiter;
       }
       else {
         numbers = numbers.replace('\n', ',');
-        pattern = ',';
       }
 
-      numbersArray = numbers.split(pattern);
+      numbersArray = numbers.split(delimiter);
       for (var i = 0; i < numbersArray.length; i++) {
         if (parseInt(numbersArray[i]) < 0) {
           negativeArray.push(numbersArray[i]);
